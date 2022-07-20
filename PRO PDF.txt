@@ -1,0 +1,87 @@
+Designed and developed data driven framework using Selenium web driver, TestNG & Maven. 
+Worked on BDD framework. Worked on Jenkins for script scheduling. 
+Responsible for Framework enhancement. 
+Responsible for creating the Test Estimation, Test Summary Report, providing status in daily team meeting.
+
+Write a Java Program to 
+1.	Count the number of words in the following Paragraph.
+2.	Remove duplicate words if any and then display the duplicate words with their number of occurrences in the paragraph
+3.	Display all the unique words in sorted order
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. Count the number of words in the following Paragraph.
+public class WordCount{
+static int countword(String s){
+int count=o;
+char ch[]=new char[s.length()];
+for(int i=0;i<s.length();i++){
+ch[i]=s.charAt(i);
+if(((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' '))||((ch[0]!='')&&(i==0))){
+count++;
+}
+return count;
+}
+public static void main(String[] args){
+String s="Designed and developed data driven framework using Selenium web driver, TestNG & Maven. Worked on BDD 
+framework. Worked on Jenkins for script scheduling. Responsible for Framework enhancement. Responsible for
+ creating the Test Estimation, Test Summary Report, providing status in daily team meeting";
+System.out.println(countword(s)+"words");
+}
+}
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2.Remove duplicate words if any and then display the duplicate words with their number of occurrences in the paragraph
+
+public static void main(String[] args){
+String s="Designed and developed data driven framework using Selenium web driver, TestNG & Maven. Worked on BDD 
+framework. Worked on Jenkins for script scheduling. Responsible for Framework enhancement. Responsible for
+creating the Test Estimation, Test Summary Report, providing status in daily team meeting";
+int count;
+s=s.toLowerCase();
+String words[]=s.split(" ");
+System.out.println("Duplicate words:");
+for(int i=0;i<words.length;i++){
+count=1;
+for(int j=i+1;j<words.length;j++){
+if(words[i].equals(words[j])){
+count++;
+words[j]="0";
+}
+
+
+}
+
+if(count>1&&words[i]!="0"){
+String[] s1=words[i].split(" ");
+Hashmap<String,Integer> hm=new Hashmap<String,Integer>();
+for(String a:s1){
+if(hm.containsKey(a)){
+int y=hm.get(a);
+hm.put(a,y+1);
+}else{
+hm.put(a,1);
+}
+System.out.println(hm);
+}
+
+}
+
+}
+
+
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3.Display all the unique words in sorted order
+
+public static void main(String[] args){
+String s="Designed and developed data driven framework using Selenium web driver, TestNG & Maven. Worked on BDD 
+framework. Worked on Jenkins for script scheduling. Responsible for Framework enhancement. Responsible for
+creating the Test Estimation, Test Summary Report, providing status in daily team meeting";
+String[] words=s.split(" ");
+Hashset<String>unique=new HashSet<String>(Arrays.asList(words));
+for(String s1:unique){
+System.out.println(s1);
+}
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
